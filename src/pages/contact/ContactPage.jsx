@@ -1,9 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Sun, Moon, Phone, Mail, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import '../../index.css';
 import { useDarkMode } from '../../DarkModeContext';
+import emailjs from '@emailjs/browser';
 
 const ContactPage = () => {
   // Scroll to top on mount, and scroll to form only if hash is present
@@ -17,6 +17,7 @@ const ContactPage = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, []);
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
   const [formData, setFormData] = useState({
@@ -26,6 +27,10 @@ const ContactPage = () => {
     area: 'sd',
     project: ''
   });
+
+  // Add states for EmailJS
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -65,20 +70,53 @@ const ContactPage = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! We will get back to you soon.');
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      area: 'sd',
-      project: ''
-    });
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    // EmailJS configuration
+    const serviceId = 'service_7m0k3gp';
+    const templateId = 'template_ge4hvrc';
+    const publicKey = 'eLI7l-3ehUz_MsAXx';
+
+    // Prepare template parameters
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      company: formData.company,
+      service_area: formData.area,
+      project_brief: formData.project,
+      to_name: 'DEVORA Team',
+    };
+
+    try {
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams,
+        publicKey
+      );
+
+      if (response.status === 200) {
+        setSubmitStatus('success');
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          area: 'sd',
+          project: ''
+        });
+      }
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+  
 
   return (
     <div className={`homepage ${isDarkMode ? 'dark' : 'light'}`}>
@@ -195,6 +233,36 @@ const ContactPage = () => {
             {/* Contact Form */}
             <div className='contact-form-side' id='contact-form'>
               <h2 className='contact-form-title'>Send us a Message</h2>
+              
+              {/* Status Messages */}
+              {submitStatus === 'success' && (
+                <div style={{ 
+                  color: '#10B981', 
+                  backgroundColor: '#D1FAE5', 
+                  padding: '12px 16px', 
+                  borderRadius: '8px', 
+                  marginBottom: '20px',
+                  fontSize: '14px',
+                  border: '1px solid #A7F3D0'
+                }}>
+                  ✅ Message sent successfully! We'll get back to you within 24 hours.
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div style={{ 
+                  color: '#EF4444', 
+                  backgroundColor: '#FEE2E2', 
+                  padding: '12px 16px', 
+                  borderRadius: '8px', 
+                  marginBottom: '20px',
+                  fontSize: '14px',
+                  border: '1px solid #FECACA'
+                }}>
+                  ❌ Failed to send message. Please try again or contact us directly at devoragroup8@gmail.com
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className='contact-form'>
                 <div className='form-group'>
                   <label className='form-label' htmlFor='name'>Name *</label>
@@ -207,6 +275,7 @@ const ContactPage = () => {
                     placeholder='Enter your full name' 
                     className='form-input' 
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
                 
@@ -221,6 +290,7 @@ const ContactPage = () => {
                     placeholder='Enter your email address' 
                     className='form-input' 
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
                 
@@ -234,6 +304,7 @@ const ContactPage = () => {
                     onChange={handleInputChange}
                     placeholder='Your company or business name' 
                     className='form-input'
+                    disabled={isSubmitting}
                   />
                 </div>
                 
@@ -246,6 +317,7 @@ const ContactPage = () => {
                     onChange={handleInputChange}
                     className='form-select'
                     required
+                    disabled={isSubmitting}
                   >
                     <option value="sd">Software Development</option>
                     <option value="ad">App Development</option>
@@ -269,11 +341,16 @@ const ContactPage = () => {
                     placeholder='Tell us about your project requirements, goals, and timeline...' 
                     className='form-textarea'
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
                 
-                <button type='submit' className='btn-primary contact-submit-btn'>
-                  Send Message
+                <button 
+                  type='submit' 
+                  className='btn-primary contact-submit-btn'
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>

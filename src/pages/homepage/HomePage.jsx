@@ -50,7 +50,7 @@ const HomePage = () => {
         { number: "15+", label: "Projects Completed" },
         { number: "15+", label: "Happy Clients" },
         { number: "1+", label: "Years Experience" },
-        { number: "24/8", label: "Support Available" }
+        { number: "24/7", label: "Support Available" }
     ];
 
     return (

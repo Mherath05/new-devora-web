@@ -27,7 +27,7 @@ const AboutPage = () => {
     },
     {
       name: "Ruwina Ranaginghe",
-      role: "Software Engineer", 
+      role: "Software Engineer / QA Engineer", 
       description: "Experienced software engineer specializing in backend development and database optimization.",
       image: "/team/ruwina.jpg"
     },
@@ -69,9 +69,15 @@ const AboutPage = () => {
     },
     {
       name: "Sajitha Anupama",
-      role: "Project Manager",
+      role: "IT Project Manager",
       description: "Experienced project manager ensuring smooth delivery and coordination across all development phases.",
       image: "/team/sajitha.jpg"
+    },
+    {
+      name: "Hiruni Ramanayaka",
+      role: "Finance Manager",
+      description: "A finance manager helps businesses plan, manage, and grow their money wisely.",
+      image: "/team/hiruni.PNG"
     }
   ];
 
