@@ -21,13 +21,13 @@ const AboutPage = () => {
   const teamMembers = [
     {
       name: "Madhushanka Herath",
-      role: "Software Engineer / QA Engineer",
+      role: "Software Engineer",
       description: "Passionate full-stack developer with expertise in modern web technologies and system architecture.",
       image: "/team/madhushanka.jpg"
     },
     {
       name: "Ruwina Ranaginghe",
-      role: "Software Engineer / QA Engineer", 
+      role: "Software Engineer", 
       description: "Experienced software engineer specializing in backend development and database optimization.",
       image: "/team/ruwina.jpg"
     },
@@ -45,38 +45,38 @@ const AboutPage = () => {
     },
     {
       name: "Chathuranga Saman",
-      role: "UI/UX Designer",
-      description: "Creative designer focused on creating intuitive and visually appealing user interfaces.",
+      role: "Quality Assurance",
+      description: "Quality assurance specialist ensuring robust and reliable software through comprehensive testing.",
       image: "/team/chathuranga.jpg"
     },
         {
       name: "Pasanna Isurinda",
-      role: "UI/UX Designer",
-      description: "UI/UX designer passionate about intuitive interfaces. Expert in user-centered design. Focused on creative digital solutions.",
+      role: "Graphic Designer",
+      description: "Creative designer focused on creating intuitive and visually appealing user interfaces.",
       image: "/team/isurinda.jpg"
     },
     {
       name: "Tharindu Anusanga",
       role: "Graphic Designer",
-      description: "Quality assurance specialist ensuring robust and reliable software through comprehensive testing.",
+      description: "UI/UX designer passionate about intuitive interfaces. Expert in user-centered design. Focused on creative digital solutions.",
       image: "/team/tharindu.jpg"
     },
     {
       name: "Malindu Niranjaya",
       role: "Digital Marketing Executive",
-      description: "Digital marketing expert driving brand awareness and customer engagement through strategic campaigns.",
+      description: "Handles a company’s social media accounts to engage audiences and build brand presence online.",
       image: "/team/malindu.jpg"
     },
     {
       name: "Sajitha Anupama",
-      role: "IT Project Manager",
-      description: "Experienced project manager ensuring smooth delivery and coordination across all development phases.",
+      role: "Marketing Manager",
+      description: "Plans and oversees marketing campaigns to promote products or services and drive sales.",
       image: "/team/sajitha.jpg"
     },
     {
       name: "Hiruni Ramanayaka",
-      role: "Finance Manager",
-      description: "A finance manager helps businesses plan, manage, and grow their money wisely.",
+      role: "Project Manager",
+      description: "Manages and coordinates technology projects to ensure they are completed on time and within budget.",
       image: "/team/hiruni.PNG"
     }
   ];
