@@ -148,9 +148,9 @@ const HomePage = () => {
                                     <span>Get Started</span>
                                     <ArrowRight className="btn-icon" />
                                 </Link>
-                                <button className="btn-secondary">
+                                <Link to="/services" className="btn-secondary">
                                     Learn More
-                                </button>
+                                </Link>
                             </div>
 
                             {/* Stats */}

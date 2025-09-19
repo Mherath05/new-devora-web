@@ -38,7 +38,7 @@ const AboutPage = () => {
       image: "/team/yohan.jpg"
     },
     {
-      name: "Arulnesavesagam Arisahanvass",
+      name: "Arishanvass",
       role: "Software Engineer",
       description: "Versatile developer with strong problem-solving skills and expertise in multiple programming languages.",
       image: "/team/arisan.jpg"

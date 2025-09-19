@@ -41,7 +41,7 @@ const ServicesPage = ({ onNavigate }) => {
             ],
             technologies: ["React", "Node.js", "Python", "Java", "PHP", "Laravel", "MongoDB", "MySQL"],
             timeline: "8-24 weeks",
-            price: "Starting from Rs. 15,000"
+            price: "Starting from Rs. 20,000"
         },
         {
             id: 'web-mobile',
@@ -59,7 +59,7 @@ const ServicesPage = ({ onNavigate }) => {
             ],
             technologies: ["React", "Flutter", "React Native", "Firebase"],
             timeline: "6-16 weeks",
-            price: "Starting from Rs. 8,000"
+            price: "Starting from Rs. 15,000"
         },
         {
             id: 'ui-ux',
@@ -95,7 +95,7 @@ const ServicesPage = ({ onNavigate }) => {
             ],
             technologies: ["Cloud Platforms", "Microservices", "DevOps", "Security Tools", "Analytics"],
             timeline: "2-8 weeks",
-            price: "Starting from Rs. 3,000"
+            price: "Starting from Rs. 5,000"
         },
         {
             id: 'maintenance',
@@ -113,7 +113,7 @@ const ServicesPage = ({ onNavigate }) => {
             ],
             technologies: ["Monitoring Tools", "CI/CD Pipelines", "Cloud Infrastructure", "Security Tools"],
             timeline: "Ongoing",
-            price: "Starting from Rs. 2,000/month"
+            price: "Starting from Rs. 4,000/month"
         }
     ];
 
