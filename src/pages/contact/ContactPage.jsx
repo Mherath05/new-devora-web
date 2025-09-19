@@ -122,7 +122,7 @@ const ContactPage = () => {
     <div className={`homepage ${isDarkMode ? 'dark' : 'light'}`}>
       
       {/* Navigation Bar */}
-      <nav className="navbar">
+  <nav className="navbar devora-navbar">
         <div className="nav-container">
           <div className="nav-content">
             

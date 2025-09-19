@@ -177,7 +177,7 @@ const ServicesPage = ({ onNavigate }) => {
         <div className={`homepage ${isDarkMode ? 'dark' : 'light'}`}>
 
             {/* Navigation Bar */}
-            <nav className="navbar">
+            <nav className="navbar devora-navbar">
                 <div className="nav-container">
                     <div className="nav-content">
 
@@ -334,10 +334,13 @@ const ServicesPage = ({ onNavigate }) => {
                                         </div>
 
                                         <div className="service-cta-section">
-                                            <Link to="/contact#contact-form" className="btn-cta1">
+                                            <button className="btn-cta1" onClick={(e) => {
+                                                e.stopPropagation();
+                                                onNavigate('contact');
+                                            }}>
                                                 <span>Get Started</span>
                                                 <ArrowRight className="btn-icon" />
-                                            </Link>
+                                            </button>
                                         </div>
                                     </div>
                                 )}

@@ -57,7 +57,7 @@ const HomePage = () => {
         <div className={`homepage ${isDarkMode ? 'dark' : 'light'}`}>
 
             {/* Navigation Bar */}
-            <nav className="navbar">
+            <nav className="navbar devora-navbar">
                 <div className="nav-container">
                     <div className="nav-content">
 
@@ -148,9 +148,9 @@ const HomePage = () => {
                                     <span>Get Started</span>
                                     <ArrowRight className="btn-icon" />
                                 </Link>
-                                    <Link to="/services" className="btn-secondary">
-                                        Learn More
-                                    </Link>
+                                <button className="btn-secondary">
+                                    Learn More
+                                </button>
                             </div>
 
                             {/* Stats */}
@@ -222,7 +222,7 @@ const HomePage = () => {
                                 Let's collaborate to create something extraordinary. Get in touch with
                                 our team and start your digital transformation journey today.
                             </p>
-                            <Link to="/contact#contact-form" className="btn-cta">
+                            <Link to="/contact#contact-form" className="btn-primary">
                                 <span>Start Your Project</span>
                                 <ArrowRight className="btn-icon" />
                             </Link>
