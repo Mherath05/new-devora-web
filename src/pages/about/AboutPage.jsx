@@ -57,7 +57,7 @@ const AboutPage = () => {
     },
     {
       name: "Tharindu Anusanga",
-      role: "Graphic Designer",
+      role: "UI/UX Designer",
       description: "UI/UX designer passionate about intuitive interfaces. Expert in user-centered design. Focused on creative digital solutions.",
       image: "/team/tharindu.jpg"
     },
