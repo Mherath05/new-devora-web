@@ -15,6 +15,7 @@ const HomePage = () => {
         { name: 'Home', href: '/' },
         { name: 'About Us', href: '/about' },
         { name: 'Services', href: '/services' },
+        { name: 'Shop', href: '/shop' },
         { name: 'Contact', href: '/contact' }
     ];
 
