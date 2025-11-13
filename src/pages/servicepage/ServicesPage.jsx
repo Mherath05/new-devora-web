@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import '../../index.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
     Menu, X, Sun, Moon, ArrowRight, CheckCircle, Code, Smartphone,
     Palette, Settings, Wrench, Users, Server, Database, Globe,
@@ -9,10 +9,11 @@ import {
 } from 'lucide-react';
 import { useDarkMode } from '../../DarkModeContext';
 
-const ServicesPage = ({ onNavigate }) => {
+const ServicesPage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [selectedService, setSelectedService] = useState(null);
     const { isDarkMode, toggleDarkMode } = useDarkMode();
+    const navigate = useNavigate();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -337,7 +338,7 @@ const ServicesPage = ({ onNavigate }) => {
                                         <div className="service-cta-section">
                                             <button className="btn-cta1" onClick={(e) => {
                                                 e.stopPropagation();
-                                                onNavigate('contact');
+                                                navigate('/contact#contact-form');
                                             }}>
                                                 <span>Get Started</span>
                                                 <ArrowRight className="btn-icon" />
